@@ -1,0 +1,429 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif !important;
+    margin: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--blue-alt-color);
+}
+/* start-sidebar */
+
+.sidebar h3::before,
+.sidebar h3::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+}
+.sidebar h3::before {
+    bottom: -20px;
+    width: 80px;
+    height: 2px;
+}
+.sidebar h3::after {
+    bottom: -29px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #F6F6F6;
+}
+@media (max-width: 767px) {
+    .sidebar h3::before,
+    .sidebar h3::after {
+        display: none;
+    }
+}
+/* end-sidebar */
+/* start-content */
+.head .search::before {
+    font-family: "Font awesome 6 free";
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    font-size: 13px;
+    color: var(--grey-color);
+}
+.head .search input:focus {
+    width: 200px;
+}
+.head .search input:focus::placeholder {
+    opacity: 0;
+}
+
+.head .icons .notification::before {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--red-color);
+}
+
+.page h1::before,
+.page h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 3px;
+}
+
+.page h1::before {
+    width: 120px;
+    background-color: #fff;
+}
+
+.page h1::after {
+    width: 40px;
+    background-color: #000;
+}
+
+@media (max-width:767px) {
+    .wrapper {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+/* end-content */
+/* start-welcome widget */
+.welcome .visit:hover {
+    background-color: var(--blue-alt-color);
+}
+/* end- welcome widget */
+/* start quick draft widget */
+.quick-draft .save:hover {
+    background-color: var(--blue-alt-color);
+}
+/* end quick draft widget */
+/* start-target */
+.targets .details .progress>span span::after {
+    content: "";
+    position: absolute;
+    border-color: transparent;
+    border-width: 5px;
+    border-style: solid;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.targets .details .progress>.blue span::after {
+    border-top-color: var(--blue-color) !important;
+}
+
+.targets .details .progress>.orange span::after {
+    border-top-color: var(--orange-color);
+}
+
+.targets .details .progress>.green span::after {
+    border-top-color: var(--green-color);
+}
+/* end-target */
+/* start-latest-tasks */
+.tasks .delete:hover {
+    color: var(--red-color);
+}
+/* end-latest-tasks */
+/* start-last-project */
+.last-project ul::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--blue-color);
+}
+
+.last-project ul li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-right: 15px;
+    outline: 2px solid var(--blue-color);
+    z-index: 1;
+}
+
+.last-project ul .done::before {
+    background-color: var(--blue-color);
+}
+
+.last-project ul .current::before {
+    animation: change-color 0.8s infinite alternate;
+}
+/* end-last-project */
+/* start-social-media */
+.social-media .box i:hover {
+    transform: rotate(5deg);
+}
+/* end-social-media */
+/* start-projects */
+
+.projects table tbody tr:hover td {
+    background-color: #eee;
+}
+
+/* end-projects */
+/* start-settings */
+@media (max-width: 767px) {
+    .setting-page {
+        grid-template-columns: minmax(100px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.setting-page .sec-box .button:hover {
+    background-color: var(--blue-alt-color);
+}
+.setting-page .social-media>div:focus-within i {
+    color: #000;
+}
+.widgets .control label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    margin-top: -9px;
+    border: 2px solid var(--grey-color);
+    transition: 0.3s;
+}
+
+.widgets .control label:hover::before {
+    border-color: var(--blue-color);
+}
+
+.widgets .control label::after {
+    font-family: var(--fa-style-family-classic);
+    content: "\f00c";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--blue-color);
+    color: #fff;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    transform: scale(0) rotate(360deg);
+    transition: 0.3s;
+}
+
+.widgets .control input[type="checkbox"]:checked+label::after {
+    transform: scale(1);
+}
+
+.backup-control .date label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--grey-color);
+    transition: 0.3s;
+}
+
+.backup-control .date label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--blue-color);
+    transition: 0.3s;
+    transform: scale(0);
+}
+
+.backup-control .date input[type="radio"]:checked+label::before {
+    border-color: var(--blue-color);
+}
+
+.backup-control .date input[type="radio"]:checked+label::after {
+    transform: scale(1);
+}
+
+.backup-control .servers input[type="radio"]:checked+.server {
+    border-color: var(--blue-color);
+    color: var(--blue-color);
+}
+
+.toggle-switch::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f00d";
+    font-weight: 900;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 4px;
+    left: 4px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background-color: var(--blue-color);
+}
+
+.toggle-checkbox:checked+.toggle-switch::before {
+    content: "\f00c";
+    left: 50px;
+    color: var(--blue-color);
+}
+
+/* end-settings */
+/* start-profile-page */
+
+.profile-page .info-box .box:hover {
+    background-color: #F9F9F9;
+}
+
+.toggle-switch2::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f00d";
+    font-weight: 900;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 4px;
+    left: 4px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.toggle-checkbox2:checked+.toggle-switch2 {
+    background-color: var(--blue-color);
+}
+
+.toggle-checkbox2:checked+.toggle-switch2::before {
+    content: "\f00c";
+    left: 62px;
+    color: var(--blue-color);
+}
+
+/* end-profile-page */
+/* start-projects page */
+
+.projects-page .projects .team a:hover {
+    z-index: 1000;
+}
+/* end-projects page */
+/* start friends page */
+
+.friends-page .friend .content-friend i:hover {
+    background-color: var(--blue-color);
+    color: #fff;
+}
+/* end friends page */
+/* start-files-page */
+
+.files-page .files-stats .upload:hover {
+    background-color: var(--blue-alt-color);
+}
+.files-page .files-stats .upload:hover i {
+    animation: go-up .8s infinite ;
+}
+.files-page .file-content .file:hover img{
+    transform: rotate(5deg);
+}
+/* end-files-page */
+/* start plan-page */
+
+
+/* end plan-page */
+/* start animation */
+@keyframes change-color {
+    from {
+        background-color: var(--blue-color);
+    }
+
+    to {
+        background-color: #fff;
+    }
+}
+@keyframes go-up {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/* end animation */
